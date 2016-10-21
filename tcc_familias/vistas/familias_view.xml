@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+       <record model="ir.ui.view" id="view_tcc_familias_form">
+            <field name="name">Familias</field>
+            <field name="model">tcc.familias</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Registro">
+                    <group>
+                        <field name='consejocomunal_id'/>
+                        <field name='nombre_familia'/>
+                        <field name='tipo_vivienda'/>
+                        <field name='tenencia'/>
+                        <field name='fecha_residente'/>
+                        <field name='casa_id'/>
+                        <field name='apartamento_id'/>
+                        <field name='active'/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_tcc_familias_tree">
+            <field name="name">Familias</field>
+            <field name="model">tcc.familias</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="familia">
+                    <field name='consejocomunal_id'/>
+                    <field name='nombre_familia'/>
+                    <field name='tipo_vivienda'/>
+                    <field name='tenencia'/>
+                    <field name='fecha_residente'/>
+                    <field name='casa_id'/>
+                    <field name='apartamento_id'/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_tcc_familias">
+            <field name="name">Familia</field>
+            <field name="res_model">tcc.familias</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Familias" id="menu_familias" sequence="10"/>
+        <menuitem name="Configuracion de familias" parent="menu_familias" id="conf_familias" sequence="10"/>
+        <menuitem name="Familias" parent="conf_familias" action="action_tcc_familias" id="menu_registro" sequence="10"/>
+    </data>
+</openerp>

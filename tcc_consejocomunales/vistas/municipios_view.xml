@@ -1,0 +1,37 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_tcc_municipio_form">
+            <field name="name">Municipio</field>
+            <field name="model">tcc.municipios</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Registro">
+                    <group>
+                        <field name="nombre"/>
+                        <field name="active"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_tcc_estados_tree">
+            <field name="name">Municipio</field>
+            <field name="model">tcc.municipios</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Municipio">
+                    <field name="nombre"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_tcc_municipios">
+            <field name="name">Municipio</field>
+            <field name="res_model">tcc.municipios</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Municipios" parent="conf_direccion" action="action_tcc_municipios" id="menu_municipios" sequence="10"/>
+    </data>
+</openerp>

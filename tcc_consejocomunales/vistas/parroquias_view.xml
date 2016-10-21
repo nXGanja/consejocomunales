@@ -1,0 +1,37 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_tcc_parroquias_form">
+            <field name="name">Parroquias</field>
+            <field name="model">tcc.parroquias</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Registro">
+                    <group>
+                        <field name="nombre"/>
+                        <field name="active"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_tcc_parroquias_tree">
+            <field name="name">Parroquias</field>
+            <field name="model">tcc.parroquias</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Parroquia">
+                    <field name="nombre"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_tcc_parroquias">
+            <field name="name">Parroquias</field>
+            <field name="res_model">tcc.parroquias</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem name="Parroquias" parent="conf_direccion" action="action_tcc_parroquias" id="menu_parroquias" sequence="10"/>
+    </data>
+</openerp>

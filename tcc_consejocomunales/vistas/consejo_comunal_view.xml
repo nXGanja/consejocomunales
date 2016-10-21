@@ -1,0 +1,49 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_tcc_consejocomunal_form">
+            <field name="name">Registro de Consejos Comunales</field>
+            <field name="model">tcc.consejocomunales</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            	<group>
+            		<field name="name"/>
+            		<field name="rif" style="width: 30%%"/>
+                    <field name="codigo_situr" style="width: 30%%"/>
+                    <field name="fecha_constitucion"/>
+                    <field name="estado_id"/>
+                    <field name="municipio_id"/>
+                    <field name="parroquia_id"/>
+                    <field name="active"/>
+                </group>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_tcc_consejocomunal_tree">
+            <field name="name">Lista de Consejo Comunales</field>
+            <field name="model">tcc.consejocomunales</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Lista">
+                    <field name="name"/>
+                    <field name="rif"/>
+                    <field name="codigo_situr"/>
+                    <field name="fecha_constitucion"/>
+                    <field name="estado_id"/>
+                    <field name="municipio_id"/>
+                    <field name="parroquia_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_tcc_consejocomunal_registro">
+            <field name="name">Consejo Comunal Registro</field>
+            <field name="res_model">tcc.consejocomunales</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Consejo comunal" id="menu_consejocomunal" sequence="10"/>
+        <menuitem name="Inicio" parent="menu_consejocomunal" id="menu_inicio" sequence="10"/>
+        <menuitem name="Consejo Comunal" parent="menu_inicio" action="action_tcc_consejocomunal_registro" id="menu_registro" sequence="10"/>
+    </data>
+</openerp>
